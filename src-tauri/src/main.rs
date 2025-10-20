@@ -5,14 +5,5 @@ use std::{env, path::PathBuf, process::Command};
 
 
 fn main() {
-    let mut current_dir: PathBuf = env::current_dir().unwrap();
-    current_dir.pop();
-    current_dir.push("children");
-    current_dir = current_dir.join("AH-64D_MFCD_leaderLine.png");
-
-    let _ = Command::new("cmd")
-            .args(["/C", "start", "", current_dir.to_str().unwrap()])
-            .spawn();
-
     uwacs_lib::run()
 }
